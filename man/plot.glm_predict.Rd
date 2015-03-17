@@ -2,7 +2,7 @@
 % Please edit documentation in R/glm_reg.R
 \name{plot.glm_predict}
 \alias{plot.glm_predict}
-\title{Plot method for glm_predict (i.e., predict.glm_reg)}
+\title{Plot method for the predict.glm_reg function}
 \usage{
 \method{plot}{glm_predict}(x, glm_xvar = "", glm_facet_row = ".",
   glm_facet_col = ".", glm_color = "none", glm_conf_level = 0.95, ...)
@@ -23,7 +23,7 @@
 \item{...}{further arguments passed to or from other methods}
 }
 \description{
-Plot method for glm_predict (i.e., predict.glm_reg)
+Plot method for the predict.glm_reg function
 }
 \details{
 See \url{http://mostly-harmless.github.io/radiant/quant/glm_reg} for an example in Radiant
@@ -52,5 +52,7 @@ plot(pred, glm_xvar = "age", glm_color = "pclass", glm_facet_col = "sex")
 \code{\link{summary.glm_reg}} to summarize results
 
 \code{\link{plot.glm_reg}} to plot results
+
+\code{\link{predict.glm_reg}} to generate predictions
 }
 

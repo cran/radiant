@@ -62,8 +62,8 @@ output$report <- renderUI({
                   # wordWrap = TRUE,
                   height = "600px",
                   # selectionId = "rmd_selection",
-                  value=state_init("rmd_report",rmd_example),
-                  # hotkeys=list(runKeyRmd=list(win="Ctrl-R|Ctrl-Shift-Enter", mac="CMD-ENTER|CMD-SHIFT-ENTER"))
+                  # hotkeys=list(runKeyRmd=list(win="Ctrl-R|Ctrl-Shift-Enter", mac="CMD-ENTER|CMD-SHIFT-ENTER")),
+                  value=state_init("rmd_report",rmd_example)
                   )),
       div(class="col-xs-6", htmlOutput("rmd_knitDoc"))
     )
@@ -239,8 +239,8 @@ output$rcode <- renderUI({
   div(class="row", div(class="col-xs-6",
     shinyAce::aceEditor("r_code", mode="r",
                         # selectionId = "r_code_selection",
-                        value=state_init("r_code",r_example),
-                        # hotkeys=list(runKeyCode=list(win="Ctrl-R|Ctrl-Shift-Enter", mac="CMD-ENTER|CMD-SHIFT-ENTER"))
+                        # hotkeys=list(runKeyCode=list(win="Ctrl-R|Ctrl-Shift-Enter", mac="CMD-ENTER|CMD-SHIFT-ENTER")),
+                        value=state_init("r_code",r_example)
               ),
     actionButton("rEval", "Run"),
     downloadButton('saveCode', 'Save R-code'), tags$br(), tags$br(),

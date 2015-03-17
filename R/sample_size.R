@@ -16,7 +16,7 @@
 #' @param ss_pop_correction Apply correction for population size ("yes","no")
 #' @param ss_pop_size Population size
 #'
-#' @return A list of variables defined in sample_sizze as an object of class sample_size
+#' @return A list of variables defined in sample_size as an object of class sample_size
 #'
 #' @examples
 #' result <- sample_size(ss_type = "mean", ss_mean_err = 2, ss_mean_s = 10)
@@ -52,7 +52,7 @@ sample_size <- function(ss_type = "mean",
   environment() %>% as.list %>% set_class(c("sample_size",class(.)))
 }
 
-#' Summary method for sample size calculation
+#' Summary method for the sample_size function
 #'
 #' @details See \url{http://mostly-harmless.github.io/radiant/quant/sample_size} for an example in Radiant
 #'
@@ -63,7 +63,7 @@ sample_size <- function(ss_type = "mean",
 #' result <- sample_size(ss_type = "mean", ss_mean_err = 2, ss_mean_s = 10)
 #' summary(result)
 #'
-#' @seealso \code{\link{sampling}} to generate the results
+#' @seealso \code{\link{sample_size}} to generate the results
 #'
 #' @export
 summary.sample_size <- function(object, ...) {

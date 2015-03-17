@@ -57,7 +57,7 @@ pmap <- function(dataset, pmap_brand, pmap_attr,
 	environment() %>% as.list %>% set_class(c("pmap",class(.)))
 }
 
-#' Summarize method for the pmap function
+#' Summary method for the pmap function
 #'
 #' @details See \url{http://mostly-harmless.github.io/radiant/marketing/pmap.html} for an example in Radiant
 #'
@@ -148,8 +148,10 @@ summary.pmap <- function(object,
 #'               pmap_pref = c("Innovative","Business"))
 #' plot(result, pmap_plot = c("brand","attr","pref"))
 #'
-#' @seealso \code{\link{mds}} to calculate results
-#' @seealso \code{\link{summary.mds}} to plot results
+#' @seealso \code{\link{pmap}} to calculate results
+#' @seealso \code{\link{summary.pmap}} to plot results
+#'
+#' @importFrom wordcloud textplot
 #'
 #' @export
 plot.pmap <- function(x,

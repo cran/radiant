@@ -2,7 +2,7 @@
 % Please edit documentation in R/sample_size.R
 \name{summary.sample_size}
 \alias{summary.sample_size}
-\title{Summary method for sample size calculation}
+\title{Summary method for the sample_size function}
 \usage{
 \method{summary}{sample_size}(object, ...)
 }
@@ -12,7 +12,7 @@
 \item{...}{further arguments passed to or from other methods}
 }
 \description{
-Summary method for sample size calculation
+Summary method for the sample_size function
 }
 \details{
 See \url{http://mostly-harmless.github.io/radiant/quant/sample_size} for an example in Radiant
@@ -22,6 +22,6 @@ result <- sample_size(ss_type = "mean", ss_mean_err = 2, ss_mean_s = 10)
 summary(result)
 }
 \seealso{
-\code{\link{sampling}} to generate the results
+\code{\link{sample_size}} to generate the results
 }
 

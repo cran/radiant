@@ -2,13 +2,13 @@
 % Please edit documentation in R/glm_reg.R
 \name{predict.glm_reg}
 \alias{predict.glm_reg}
-\title{Predict method for glm}
+\title{Predict method for the glm_reg function}
 \usage{
 \method{predict}{glm_reg}(object, glm_predict_cmd = "",
   glm_predict_data = "", ...)
 }
 \arguments{
-\item{object}{Return value from \code{\link{regression}}}
+\item{object}{Return value from \code{\link{glm_reg}}}
 
 \item{glm_predict_cmd}{Generate predictions using a command. For example, `pclass = levels(pclass)` would produce predictions for the different levels of factor `pclass`. To add another variable use a `,` (e.g., `pclass = levels(pclass), age = seq(0,100,20)`)}
 
@@ -17,7 +17,7 @@
 \item{...}{further arguments passed to or from other methods}
 }
 \description{
-Predict method for glm
+Predict method for the glm_reg function
 }
 \details{
 See \url{http://mostly-harmless.github.io/radiant/quant/glm_reg} for an example in Radiant
@@ -35,5 +35,7 @@ predict(result, glm_predict_cmd = "sex = c('male','female')")
 \code{\link{summary.glm_reg}} to summarize results
 
 \code{\link{plot.glm_reg}} to plot results
+
+\code{\link{plot.glm_predict}} to plot prediction output
 }
 
