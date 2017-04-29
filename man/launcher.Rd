@@ -18,7 +18,7 @@ On Windows/Mac/Linux a file named radiant.bat/radiant.command/radiant.sh will be
 }
 \examples{
 \dontrun{
-launcher("radiant")
+radiant::launcher("radiant.model")
 }
 
 }
@@ -29,4 +29,3 @@ launcher("radiant")
 
 \code{\link{lin_launcher}} to create a shortcut on Linux
 }
-

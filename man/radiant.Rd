@@ -4,6 +4,7 @@
 \name{radiant}
 \alias{radiant}
 \alias{radiant-package}
+\alias{radiant}
 \title{radiant}
 \usage{
 radiant()
@@ -14,11 +15,10 @@ radiant
 Launch Radiant in the default browser
 }
 \details{
-See \url{http://radiant-rstats.github.io/docs} for documentation and tutorials
+See \url{https://radiant-rstats.github.io/docs} for documentation and tutorials
 }
 \examples{
 \dontrun{
-radiant()
+radiant::radiant()
 }
 }
-
