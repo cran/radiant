@@ -1,4 +1,4 @@
-setwd("~/gh")
+setwd("~/GitHub")
 
 ## building radiant packages for mac and windows
 dev <- FALSE
@@ -47,12 +47,15 @@ rem_old <- function(app) {
 }
 
 apps <- c(
+  # "DT",
+  # "shinyFiles",
+  # "shinyAce",
   "radiant.data",
   "radiant.design",
   "radiant.basics",
   "radiant.model",
   "radiant.multivariate",
-  "radiant.update",
+  # "radiant.update",
   "radiant"
 )
 
@@ -66,7 +69,7 @@ win <- readline(prompt = "Did you build on Windows? y/n: ")
 if (grepl("[yY]", win)) {
 
   ## move packages to radiant_miniCRAN. must package in Windows first
-  setwd("~/gh/")
+  setwd("~/GitHub/")
   sapply(list.files(".", pattern = "*.tar.gz"), file.copy, dirsrc)
   unlink("*.tar.gz")
   sapply(list.files(".", pattern = "*.tgz"), file.copy, dirmac)
@@ -79,12 +82,10 @@ if (grepl("[yY]", win)) {
   tools::write_PACKAGES(dirsrc, type = "source")
 
   # commit to repo
-  setwd("~/gh/minicran")
+  setwd("~/GitHub/minicran")
   system("git add --all .")
-  # mess <- paste0("radiant package updates: ", format(Sys.Date(), format = "%m-%d-%Y"))
-  # mess <- "code wrapping"
-  mess <- "pkgdown updates"
+  mess <- paste0("radiant package updates: ", format(Sys.Date(), format = "%m-%d-%Y"))
   system(paste0("git commit -m '", mess, "'"))
   system("git push")
-  setwd("~/gh/radiant")
+  setwd("~/GitHub/radiant")
 }

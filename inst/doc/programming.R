@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 
 ## ----single_mean_price, fig.height = 3, fig.width = 5--------------------
 library(radiant)
-data(diamonds)
+data(diamonds, envir = environment())
 result <- single_mean(diamonds, "price")
 summary(result)
 plot(result)

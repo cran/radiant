@@ -8,19 +8,22 @@ if (grepl("[nN]", rvprompt)) {
 }
 
 apps <- c(
+  # "DT",
+  # "shinyFiles",
+  # "shinyAce",
   "radiant.data",
   "radiant.design",
   "radiant.basics",
   "radiant.model",
   "radiant.multivariate",
-  "radiant.update",
+  # "radiant.update",
   "radiant"
 )
 
 ## build for packages ahead of CRAN
 # apps <- c("shinyAce", "rstudioapi", apps)
 
-path <- "Z:/Desktop/GitHub"
+path <- "Z:/GitHub"
 curr <- getwd()
 setwd(path)
 build_app <- function(app) {

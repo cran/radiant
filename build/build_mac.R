@@ -3,7 +3,7 @@ update_app <- function(app, mess = "Update [ci skip]", git = FALSE, github = FAL
   cat("========================================\n")
   cat("Working on app:", app)
   cat("\n========================================\n")
-  setwd(file.path("~/gh/", app))
+  setwd(file.path("~/GitHub/", app))
   devtools::document(roclets = c("rd", "collate", "namespace"))
   devtools::install(dependencies = FALSE)
   if (git) {
@@ -15,22 +15,25 @@ update_app <- function(app, mess = "Update [ci skip]", git = FALSE, github = FAL
 }
 
 apps <- c(
+  # "DT",
+  # "shinyFiles",
+  # "shinyAce",
   "radiant.data",
   "radiant.design",
   "radiant.basics",
   "radiant.model",
   "radiant.multivariate",
-  "radiant.update",
+  # "radiant.update",
   "radiant"
 )
 
-sapply(apps, update_app, mess = "MRB", git = TRUE, github = TRUE)
+sapply(apps, update_app, mess = "CRAN", git = TRUE, github = TRUE)
 
 ## build for packages ahead of CRAN
 # apps <- c("shinyAce", "rstudioapi", apps)
 
 ## build for mac
-path <- "~/gh"
+path <- "~/GitHub"
 curr <- getwd()
 setwd(path)
 build_app <- function(app) {
@@ -48,7 +51,7 @@ setwd(curr)
 # }
 
 # path <- "Z:/Desktop/GitHub"
-# path <- "~/gh"
+# path <- "~/GitHub"
 # ncapps <- c("shiny","DT","DiagrammeR", "NeuralNetTools")
 # ncapps <- c("DiagrammeR")
 # sapply(ncapps, build_app)
