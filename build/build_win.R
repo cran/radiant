@@ -11,12 +11,13 @@ apps <- c(
   # "DT",
   # "shinyFiles",
   # "shinyAce",
+  "tinytex",
   "radiant.data",
   "radiant.design",
   "radiant.basics",
   "radiant.model",
   "radiant.multivariate",
-  # "radiant.update",
+  "radiant.update",
   "radiant"
 )
 

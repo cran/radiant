@@ -15,16 +15,16 @@ ret <- sapply(
   function(p) {
     devtools::install_github(
       paste0("radiant-rstats/", p),
-      # ref = "MRB",
       dependencies = FALSE
     )
   }
 )
 
-devtools::install_github("rstudio/rstudioapi")
-devtools::install_github("rstudio/DT")
-devtools::install_github("trestletech/shinyAce")
-devtools::install_github("vnijs/shinyFiles")
+# devtools::install_github("rstudio/rstudioapi")
+# devtools::install_github("rstudio/DT")
+# devtools::install_github("trestletech/shinyAce")
+# devtools::install_github("thomasp85/shinyFiles")
+install.packages(c("rstudioapi", "DT", "shinyAce", "shinyFiles"))
 
 ## to install the release version
 # packages <- c(
