@@ -8,10 +8,9 @@ if (grepl("[nN]", rvprompt)) {
 }
 
 apps <- c(
-  # "DT",
-  # "shinyFiles",
   # "shinyAce",
-  "tinytex",
+  "shinyFiles",
+  "gitgadget",
   "radiant.data",
   "radiant.design",
   "radiant.basics",
@@ -24,9 +23,9 @@ apps <- c(
 ## build for packages ahead of CRAN
 # apps <- c("shinyAce", "rstudioapi", apps)
 
-path <- "Z:/GitHub"
-curr <- getwd()
-setwd(path)
+path <- normalizePath(setwd(file.path(rstudioapi::getActiveProject(), "..")), winslash = "/")
+path <- sub("\\\\\\\\Mac/Home","Z:/",path)
+curr <- setwd(path)
 build_app <- function(app) {
   f <- devtools::build(file.path(path, app))
   system(paste0("R CMD INSTALL --build ", f))
