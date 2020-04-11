@@ -1,3 +1,20 @@
+# radiant 1.3.1.0
+
+* Added launch option that only shows a URL. Convenient for VSCode to lauch Radiant in an external browser
+* Using `polycor::hetcor` to calculate measures of correlation between numeric and categorical variables
+* Using `patchwork` to combine multiple plots 
+
+# radiant 1.2.0.0
+
+* Documentation updates
+* Upgrade dependency to shiny 1.4.0
+* Improved handling of fractions in radiant.design, radiant.basics, and radiant.model
+* Improved button refresh code when relevant inputs are changed by the user
+
+# radiant 1.1.0.0
+
+* Numerous small code changes to support enhanced auto-completion, tooltips, and annotations in shinyAce 0.4.1
+
 # radiant 0.9.9.0
 
 * Option to pass additional arguments to `shiny::runApp` when starting radiant such as the port to use. For example, radiant::radiant("https://github.com/radiant-rstats/docs/raw/gh-pages/examples/demo-dvd-rnd.state.rda", port = 8080) 

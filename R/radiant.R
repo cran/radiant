@@ -1,5 +1,6 @@
 #' Launch radiant in the default browser
 #'
+#' @description Launch radiant in the default web browser
 #' @details See \url{https://radiant-rstats.github.io/docs} for documentation and tutorials
 #'
 #' @param state Path to state file to load
@@ -46,6 +47,18 @@ radiant_window <- function(state, ...) radiant.data::launch(package = "radiant",
 #' }
 #' @export
 radiant_viewer <- function(state, ...) radiant.data::launch(package = "radiant", run = "viewer", state, ...)
+
+#' Start radiant but do not open a browser
+#'
+#' @param state Path to statefile to load
+#' @param ... additional arguments to pass to shiny::runApp (e.g, port = 8080)
+#'
+#' @examples
+#' \dontrun{
+#' radiant_url()
+#' }
+#' @export
+radiant_url <- function(state, ...) radiant.data::launch(package = "radiant", run = FALSE, state, ...)
 
 #' Create a launcher and updater for Windows (.bat)
 #'

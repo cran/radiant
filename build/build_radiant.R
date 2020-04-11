@@ -48,18 +48,20 @@ rem_old <- function(app) {
 
 apps <- c(
   # "shinyAce",
-  "shinyFiles",
-  "gitgadget",
+  # "shinyFiles",
+  # "gitgadget",
   "radiant.data",
-  "radiant.design",
-  "radiant.basics",
-  "radiant.model",
-  "radiant.multivariate",
-  "radiant.update",
+  # "radiant.design",
+  # "radiant.basics",
+  # "radiant.model",
+  # "radiant.multivariate",
+  # "radiant.update",
   "radiant"
 )
 
 sapply(apps, rem_old)
+# sapply(apps, function(x) devtools::install(pkg = paste0("../", x), upgrade = "never"))
+sapply(apps, function(x) devtools::install(pkg = x, upgrade = "never"))
 
 ## probably need to restart Rstudio before building
 ## avoid 'loaded namespace' stuff when building for mac
