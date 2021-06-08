@@ -1,7 +1,7 @@
 #' Launch radiant in the default browser
 #'
 #' @description Launch radiant in the default web browser
-#' @details See \url{https://radiant-rstats.github.io/docs} for documentation and tutorials
+#' @details See \url{https://radiant-rstats.github.io/docs/} for documentation and tutorials
 #'
 #' @param state Path to state file to load
 #' @param ... additional arguments to pass to shiny::runApp (e.g, port = 8080)
@@ -21,7 +21,7 @@ radiant <- function(state, ...) radiant.data::launch(package = "radiant", run = 
 #' @param state Path to state file to load
 #' @param ... additional arguments to pass to shiny::runApp (e.g, port = 8080)
 #'
-#' @details See \url{https://radiant-rstats.github.io/docs} for documentation and tutorials
+#' @details See \url{https://radiant-rstats.github.io/docs/} for documentation and tutorials
 #'
 #' @importFrom radiant.data launch
 #'
@@ -34,7 +34,7 @@ radiant_window <- function(state, ...) radiant.data::launch(package = "radiant",
 
 #' Launch radiant in the Rstudio viewer
 #'
-#' @details See \url{https://radiant-rstats.github.io/docs} for documentation and tutorials
+#' @details See \url{https://radiant-rstats.github.io/docs/} for documentation and tutorials
 #'
 #' @param state Path to state file to load
 #' @param ... additional arguments to pass to shiny::runApp (e.g, port = 8080)
@@ -102,7 +102,7 @@ win_launcher <- function(app = c("radiant", "radiant.data", "radiant.design", "r
     Sys.chmod(fn1, mode = "0755")
 
     fn2 <- file.path(pt, "update_radiant.bat")
-    launch_string <- paste0("\"", Sys.which("R"), "\" -e \"unlink('~/r_sessions/*.rds', force = TRUE); install.packages('radiant', repos = 'https://radiant-rstats.github.io/minicran/', type = 'binary'); suppressWarnings(update.packages(lib.loc = .libPaths()[1], repos = 'https://radiant-rstats.github.io/minicran', ask = FALSE, type = 'binary'))\"\npause(1000)")
+    launch_string <- paste0("\"", Sys.which("R"), "\" -e \"unlink('~/.radiant.sessions/*.rds', force = TRUE); install.packages('radiant', repos = 'https://radiant-rstats.github.io/minicran/', type = 'binary'); suppressWarnings(update.packages(lib.loc = .libPaths()[1], repos = 'https://radiant-rstats.github.io/minicran', ask = FALSE, type = 'binary'))\"\npause(1000)")
     cat(launch_string, file = fn2, sep = "\n")
     Sys.chmod(fn2, mode = "0755")
 
@@ -146,7 +146,7 @@ mac_launcher <- function(app = c("radiant", "radiant.data", "radiant.design", "r
     Sys.chmod(fn1, mode = "0755")
 
     fn2 <- paste0("/Users/", Sys.getenv("USER"), "/Desktop/update_radiant.command")
-    launch_string <- paste0("#!/usr/bin/env Rscript\nunlink('~/r_sessions/*.rds', force = TRUE)\ninstall.packages('radiant', repos = 'https://radiant-rstats.github.io/minicran/', type = 'binary')\nsuppressWarnings(update.packages(lib.loc = .libPaths()[1], repos = 'https://radiant-rstats.github.io/minicran', ask = FALSE, type = 'binary'))\nSys.sleep(1000)")
+    launch_string <- paste0("#!/usr/bin/env Rscript\nunlink('~/.radiant.sessions/*.rds', force = TRUE)\ninstall.packages('radiant', repos = 'https://radiant-rstats.github.io/minicran/', type = 'binary')\nsuppressWarnings(update.packages(lib.loc = .libPaths()[1], repos = 'https://radiant-rstats.github.io/minicran', ask = FALSE, type = 'binary'))\nSys.sleep(1000)")
     cat(launch_string, file = fn2, sep = "\n")
     Sys.chmod(fn2, mode = "0755")
 
@@ -190,7 +190,7 @@ lin_launcher <- function(app = c("radiant", "radiant.data", "radiant.design", "r
     Sys.chmod(fn1, mode = "0755")
 
     fn2 <- paste0(Sys.getenv("HOME"), "/Desktop/update_radiant.sh")
-    launch_string <- paste0("#!/usr/bin/env Rscript\nunlink('~/r_sessions/*.rds', force = TRUE)\ninstall.packages('radiant', repos = 'https://radiant-rstats.github.io/minicran/')\nsuppressWarnings(update.packages(lib.loc = .libPaths()[1], repos = 'https://radiant-rstats.github.io/minicran', ask = FALSE))\nSys.sleep(1000)")
+    launch_string <- paste0("#!/usr/bin/env Rscript\nunlink('~/.radiant.sessions/*.rds', force = TRUE)\ninstall.packages('radiant', repos = 'https://radiant-rstats.github.io/minicran/')\nsuppressWarnings(update.packages(lib.loc = .libPaths()[1], repos = 'https://radiant-rstats.github.io/minicran', ask = FALSE))\nSys.sleep(1000)")
     cat(launch_string, file = fn2, sep = "\n")
     Sys.chmod(fn2, mode = "0755")
 

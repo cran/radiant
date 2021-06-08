@@ -9,15 +9,15 @@ if (grepl("[nN]", rvprompt)) {
 }
 
 apps <- c(
-  # "shinyAce",
-  # "shinyFiles",
-  # "gitgadget",
+  "shinyAce",
+  "shinyFiles",
+  "gitgadget",
   "radiant.data",
-  # "radiant.design",
-  # "radiant.basics",
-  # "radiant.model",
-  # "radiant.multivariate",
-  # "radiant.update",
+  "radiant.design",
+  "radiant.basics",
+  "radiant.model",
+  "radiant.multivariate",
+  "radiant.update",
   "radiant"
 )
 
