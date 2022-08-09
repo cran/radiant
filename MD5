@@ -1,14 +1,14 @@
-df3ee94f6d2c6b215b197f94e793ca68 *DESCRIPTION
+75bfaef9f9bebe73006dea71938e2c39 *DESCRIPTION
 7940af03b2d6a22126d5fd2ca18516fc *LICENSE
 e15bd402c9f12566ce6e66d5d8bc2f1e *NAMESPACE
-cd1650f0ce4feb9b7b934eb60a686d3c *NEWS.md
+34f19b5ffe659f0ca39dd4b650e6261d *NEWS.md
 31927a025e34405d611ef7963f0bec89 *R/aaa.R
 3b79baa5d8dc641e9f9fe843de5a48c7 *R/radiant.R
-7a8d72c0b3a9a72aa9d46e2288010747 *README.md
+2a177d7a2ce730fbd510c5dc541fce70 *README.md
 e8964c0d92d4afd7d97de40d53783da5 *build/build.R
 c57a412f8f6910d055046ae38230dd59 *build/build_mac.R
 3efc4cb61e686ab87f3fd33fe5050ac6 *build/build_win.R
-6fbf95bb0bf08ef2cad0bd6a93c37ce5 *build/vignette.rds
+6271724375950bfcb8f57f546abc9dec *build/vignette.rds
 b917ac7cc13a8deefa48a12d28193bc4 *inst/app/for.shinyapps.io.R
 46689e51220b80cedfb0dfa26f81ec55 *inst/app/global.R
 cea90dd4573c75ce4eaccf74a34670dc *inst/app/rsconnect/shinyapps.io/vnijs/radiant.dcf
@@ -16,7 +16,7 @@ cea90dd4573c75ce4eaccf74a34670dc *inst/app/rsconnect/shinyapps.io/vnijs/radiant.
 33600cfd268957a07d8dd52c3a585844 *inst/app/ui.R
 d8b8f93e064e60da9311d03184e61782 *inst/doc/programming.R
 439433f805aca2b2a410fdd18dad4368 *inst/doc/programming.Rmd
-b686338b33da851e61a9ecf89c896538 *inst/doc/programming.html
+7062c871cb1c4e63ada90a2d13262f7a *inst/doc/programming.html
 1e1a16626343e5c17d1210397f07dc74 *inst/rstudio/addins.dcf
 70793527f219bf5e8567055d29c25379 *man/launcher.Rd
 a72e7a444eac34ced4874e9693701b4e *man/lin_launcher.Rd
@@ -28,6 +28,6 @@ a4de8ef599aeef0b10a7f6537625b3c3 *man/radiant_viewer.Rd
 1417b995156adf2f7597fc7fdfd44600 *man/win_launcher.Rd
 658f7a895900aa8c569f0f00696dca41 *tests/testthat.R
 5f05e368cf4e89181437f95626271871 *tests/testthat/test_installed.R
-6385186b0fcc37df3c6f9a6da578a77c *vignettes/_footer.md
+2908b8c4d3b726be1d3a591b11e67b24 *vignettes/_footer.md
 dadd8632c8b7ad742f14303d4b8be3ab *vignettes/images/by-sa.png
 439433f805aca2b2a410fdd18dad4368 *vignettes/programming.Rmd
