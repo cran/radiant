@@ -12,6 +12,7 @@ if (isTRUE(dev)) {
   }
 }
 
+## building package for mac and windows
 rv <- R.Version()
 rv <- paste(rv$major, substr(rv$minor, 1, 1), sep = ".")
 
@@ -23,28 +24,28 @@ dirsrc <- "../minicran/src/contrib"
 if (rv < "3.4") {
   dirmac <- fs::path("../minicran/bin/macosx/mavericks/contrib", rv)
 } else if (rv > "3.6") {
-  dirmac <- fs::path("../minicran/bin/macosx/contrib", rv)
+  dirmac <- c(
+    fs::path("../minicran/bin/macosx/big-sur-arm64/contrib", rv),
+    fs::path("../minicran/bin/macosx/contrib", rv)
+  )
 } else {
   dirmac <- fs::path("../minicran/bin/macosx/el-capitan/contrib", rv)
 }
 
-dirwin <- file.path("../minicran/bin/windows/contrib", rv)
+dirwin <- fs::path("../minicran/bin/windows/contrib", rv)
 
 if (!file.exists(dirsrc)) dir.create(dirsrc, recursive = TRUE)
-if (!file.exists(dirmac)) dir.create(dirmac, recursive = TRUE)
+sapply(dirmac, function(x) if (!file.exists(x)) dir.create(x, recursive = TRUE))
 if (!file.exists(dirwin)) dir.create(dirwin, recursive = TRUE)
 
 ## delete older version of radiant
 rem_old <- function(app) {
   unlink(paste0(dirsrc, "/", app, "_*"))
-  unlink(paste0(dirmac, "/", app, "_*"))
+  sapply(dirmac, function(x) unlink(paste0(x, "/", app, "_*")))
   unlink(paste0(dirwin, "/", app, "_*"))
 }
 
 apps <- c(
-  "shinyAce",
-  "shinyFiles",
-  "gitgadget",
   "radiant.data",
   "radiant.design",
   "radiant.basics",
@@ -56,27 +57,33 @@ apps <- c(
 
 sapply(apps, rem_old)
 
-## why do you need to install all these packages?
-# sapply(apps, function(x) devtools::install(pkg = paste0("../", x), upgrade = "never"))
-# sapply(apps, function(x) devtools::install(pkg = x, upgrade = "never"))
-
 dir2set <- file.path(rstudioapi::getActiveProject(), "..")
 system(paste0(Sys.which("R"), " -e \"setwd('", dir2set, "'); source('radiant/build/build_mac.R')\""))
 
 win <- readline(prompt = "Did you build on Windows? y/n: ")
 if (grepl("[yY]", win)) {
 
+  fl <- list.files(pattern = "*.zip", path = "~/Dropbox/r-packages/", full.names = TRUE)
+  for (f in fl) {
+    print(f)
+    file.copy(f, "~/gh/")
+  }
+
   ## move packages to radiant_miniCRAN
   ## must build packages on Windows first
   setwd(file.path(rstudioapi::getActiveProject()))
   sapply(list.files("..", pattern = "*.tar.gz", full.names = TRUE), file.copy, dirsrc)
   unlink("../*.tar.gz")
-  sapply(list.files("..", pattern = "*.tgz", full.names = TRUE), file.copy, dirsrc)
+  unlink("~/Dropbox/r-packages/*.tar.gz")
+  sapply(list.files("..", pattern = "*.tgz", full.names = TRUE), file.copy, dirmac[1])
+  sapply(list.files("..", pattern = "*.tgz", full.names = TRUE), file.copy, dirmac[2])
   unlink("../*.tgz")
-  sapply(list.files("..", pattern = "*.zip", full.names = TRUE), file.copy, dirsrc)
+  sapply(list.files("..", pattern = "*.zip", full.names = TRUE), file.copy, dirwin)
   unlink("../*.zip")
 
-  tools::write_PACKAGES(dirmac, type = "mac.binary")
+  for (d in dirmac) {
+    tools::write_PACKAGES(d, type = "mac.binary")
+  }
   tools::write_PACKAGES(dirwin, type = "win.binary")
   tools::write_PACKAGES(dirsrc, type = "source")
 
