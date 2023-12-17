@@ -1,0 +1,12 @@
+name: radiant
+title: radiant
+username: vnijs
+account: vnijs
+server: rsm-compute-dev2.ucsd.edu
+hostUrl: https://rsm-compute-dev2.ucsd.edu/__api__
+appId: 3
+bundleId: 4
+url: https://rsm-compute-dev2.ucsd.edu/content/044002f8-66c6-450d-891d-91466130a32a/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
