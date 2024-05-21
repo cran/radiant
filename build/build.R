@@ -52,8 +52,7 @@ apps <- c(
   "radiant.model",
   "radiant.multivariate",
   "radiant.update",
-  "radiant",
-  "shiny"
+  "radiant"
 )
 
 sapply(apps, rem_old)
@@ -97,5 +96,8 @@ if (grepl("[yY]", win)) {
 }
 
 # testing
-# remove.packages("dplyr")
+# remove.packages(c("radiant.data", "radiant.model", "radiant", "radiant.multivariate", "radiant.basics", "radiant.design", "dplyr"))
+# options(repos=c(RSM = "https://radiant-rstats.github.io/minicran"))
+# install.packages("radiant.update")
+# install.packages("radiant.update", type = "binary")
 # radiant.update::radiant.update()
